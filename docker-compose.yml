@@ -1,0 +1,11 @@
+version: '3'
+services:
+  torrenttools:
+    image: fbdtemme/torrenttools
+    container_name: torrenttools
+    volumes:
+      - /mnt/media/Downloads/torrents:/torrents
+      - ./entrypoint.sh:/app/entrypoint.sh
+    stdin_open: true  # keep stdin open
+    tty: true         # allocate a pseudo-TTY
+    entrypoint: /app/entrypoint.sh  # use the entrypoint script
